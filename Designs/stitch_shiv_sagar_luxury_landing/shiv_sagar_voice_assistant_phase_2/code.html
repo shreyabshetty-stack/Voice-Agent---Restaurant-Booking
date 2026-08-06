@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shiv Sagar Voice Reservation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb785",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary": "#3c2f00",
+                      "surface-dim": "#131315",
+                      "tertiary": "#b7ccb9",
+                      "on-tertiary-container": "#213225",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary": "#233427",
+                      "surface-bright": "#39393b",
+                      "tertiary-fixed-dim": "#b7ccb9",
+                      "on-primary-fixed-variant": "#713700",
+                      "tertiary-container": "#879b8a",
+                      "inverse-primary": "#954a00",
+                      "mint-emerald": "#10B981",
+                      "on-primary": "#502400",
+                      "surface-tint": "#ffb785",
+                      "obsidian-slate": "#121214",
+                      "surface-container": "#201f21",
+                      "on-tertiary-fixed-variant": "#394b3d",
+                      "surface-container-lowest": "#0e0e10",
+                      "chilli-red": "#EF4444",
+                      "surface-container-high": "#2a2a2c",
+                      "on-background": "#e5e1e4",
+                      "primary-container": "#e37a20",
+                      "on-secondary-fixed": "#241a00",
+                      "midnight-charcoal": "#1A1A1E",
+                      "error": "#ffb4ab",
+                      "outline": "#a48c7d",
+                      "secondary-fixed-dim": "#e9c349",
+                      "amber-marigold": "#F59E0B",
+                      "on-primary-container": "#4d2300",
+                      "background": "#131315",
+                      "secondary": "#e9c349",
+                      "surface": "#131315",
+                      "primary-fixed": "#ffdcc6",
+                      "inverse-surface": "#e5e1e4",
+                      "inverse-on-surface": "#303032",
+                      "on-secondary-container": "#342800",
+                      "on-primary-fixed": "#301400",
+                      "on-tertiary-fixed": "#0e1f13",
+                      "surface-variant": "#353437",
+                      "secondary-container": "#af8d11",
+                      "on-error": "#690005",
+                      "error-container": "#93000a",
+                      "on-surface": "#e5e1e4",
+                      "tertiary-fixed": "#d3e8d5",
+                      "surface-container-low": "#1b1b1d",
+                      "surface-container-highest": "#353437",
+                      "outline-variant": "#564337",
+                      "primary": "#ffb785",
+                      "elevation-border": "#2D2D35",
+                      "secondary-fixed": "#ffe088",
+                      "on-surface-variant": "#dcc1b1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "widget": "24px"
+              },
+              "spacing": {
+                      "margin-mobile": "1rem",
+                      "widget-max-height": "640px",
+                      "margin-desktop": "2rem",
+                      "gutter": "1rem",
+                      "widget-width-desktop": "420px"
+              },
+              "fontFamily": {
+                      "section-h2": ["Outfit"],
+                      "display-h1": ["Outfit"],
+                      "reservation-code": ["monospace"],
+                      "body-text": ["Inter"],
+                      "muted-caption": ["Inter"],
+                      "widget-title": ["Outfit"]
+              },
+              "fontSize": {
+                      "section-h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "reservation-code": ["32px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "body-text": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "muted-caption": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                      "widget-title": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(45, 45, 53, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 183, 133, 0.05);
+        }
+        .breathing-glow {
+            animation: breathe 3s infinite ease-in-out;
+        }
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen w-screen overflow-hidden flex items-end justify-end p-4 md:p-8">
+<!-- Background placeholder to simulate the restaurant website behind the widget -->
+<div class="fixed inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-30" data-alt="A luxurious, modern Indian vegetarian restaurant interior, deeply toned dark slate and warm saffron lighting, blurred out to provide a sophisticated background for a floating widget." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQR-l4GqiD5_BlWSd1OyfX3Wb_QjU7GvzYJRoY-6xCgKE-GGbf5EXVfFlcDrB4CHxMtX_6xhQs7VfiW-Usw7kkVGA5DCtgB3WzTCDfEZ9DUtfPjJETG2n-SMG1Xb00mKxhMdQ17wK2LS6O4AM5S2khVY42z31Jhhl_OOXlOlXnaDw9hk9GAc8kfIPmiHXdvdo0ly5ajDZhCGRsUrzqM5kVtySAqEg0_XAMbgmJF0BN7V_tXiEFDUox5g')"></div>
+</div>
+<!-- Floating Widget Container -->
+<div class="glass-panel w-full md:w-widget-width-desktop h-full md:h-widget-max-height rounded-widget flex flex-col relative z-10 overflow-hidden transform transition-all duration-300">
+<!-- Header -->
+<div class="flex items-center justify-between p-6 border-b border-elevation-border bg-obsidian-slate/50">
+<div>
+<h2 class="font-widget-title text-widget-title text-on-surface">Voice Reservation Call</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-mint-emerald breathing-glow"></span>
+<p class="font-muted-caption text-muted-caption text-mint-emerald">Connected — Low Latency Stream</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Center Content: Visualizer -->
+<div class="flex-1 relative flex items-center justify-center overflow-hidden">
+<!-- WebGL Shader Background -->
+
+<!-- Overlay Text -->
+<div class="relative z-10 bg-midnight-charcoal/40 backdrop-blur-md px-6 py-3 rounded-full border border-elevation-border">
+<p class="font-body-text text-body-text text-on-surface font-semibold animate-pulse">Listening to you...</p>
+</div>
+<!-- Ambient Glow -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-obsidian-slate via-transparent to-transparent z-0"></div>
+</div>
+<!-- Footer / Controls -->
+<div class="p-6 pb-8 flex items-center justify-center gap-4 bg-obsidian-slate/80 border-t border-elevation-border backdrop-blur-xl">
+<!-- Mute Toggle -->
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center border border-elevation-border text-on-surface hover:bg-surface-variant transition-colors group relative">
+<span class="material-symbols-outlined" data-icon="mic_off">mic_off</span>
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-midnight-charcoal text-muted-caption font-muted-caption px-2 py-1 rounded border border-elevation-border pointer-events-none">Mute</div>
+</button>
+<!-- End Call (Capsule) -->
+<button class="flex items-center gap-3 bg-chilli-red hover:bg-red-600 text-white px-8 py-4 rounded-full font-widget-title text-[18px] font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+<span class="material-symbols-outlined" data-icon="call_end" data-weight="fill" style="font-variation-settings: 'FILL' 1;">call_end</span>
+                End Call
+            </button>
+<!-- Keyboard Mode -->
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center border border-elevation-border text-on-surface hover:bg-surface-variant transition-colors group relative">
+<span class="material-symbols-outlined" data-icon="keyboard">keyboard</span>
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-midnight-charcoal text-muted-caption font-muted-caption px-2 py-1 rounded border border-elevation-border pointer-events-none">Type</div>
+</button>
+</div>
+</div>
+</body></html>

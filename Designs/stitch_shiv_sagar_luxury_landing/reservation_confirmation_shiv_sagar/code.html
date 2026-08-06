@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shiv Sagar - Digital Booking Ticket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#a48c7d",
+                        "surface-tint": "#ffb785",
+                        "surface-container-low": "#1b1b1d",
+                        "secondary": "#e9c349",
+                        "background": "#131315",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-highest": "#353437",
+                        "midnight-charcoal": "#1A1A1E",
+                        "surface-bright": "#39393b",
+                        "on-primary-fixed": "#301400",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-primary": "#502400",
+                        "surface-container": "#201f21",
+                        "surface-dim": "#131315",
+                        "on-secondary": "#3c2f00",
+                        "inverse-primary": "#954a00",
+                        "on-secondary-container": "#342800",
+                        "obsidian-slate": "#121214",
+                        "on-error-container": "#ffdad6",
+                        "elevation-border": "#2D2D35",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "outline-variant": "#564337",
+                        "on-tertiary": "#233427",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-on-surface": "#303032",
+                        "surface-variant": "#353437",
+                        "surface": "#131315",
+                        "tertiary-fixed": "#d3e8d5",
+                        "on-primary-fixed-variant": "#713700",
+                        "tertiary-container": "#879b8a",
+                        "tertiary-fixed-dim": "#b7ccb9",
+                        "primary-fixed-dim": "#ffb785",
+                        "secondary-container": "#af8d11",
+                        "mint-emerald": "#10B981",
+                        "inverse-surface": "#e5e1e4",
+                        "on-background": "#e5e1e4",
+                        "on-secondary-fixed-variant": "#574500",
+                        "amber-marigold": "#F59E0B",
+                        "on-tertiary-fixed-variant": "#394b3d",
+                        "on-tertiary-container": "#213225",
+                        "error": "#ffb4ab",
+                        "tertiary": "#b7ccb9",
+                        "chilli-red": "#EF4444",
+                        "primary-fixed": "#ffdcc6",
+                        "on-surface": "#e5e1e4",
+                        "surface-container-lowest": "#0e0e10",
+                        "surface-container-high": "#2a2a2c",
+                        "on-primary-container": "#4d2300",
+                        "on-tertiary-fixed": "#0e1f13",
+                        "primary-container": "#e37a20",
+                        "on-surface-variant": "#dcc1b1",
+                        "primary": "#ffb785",
+                        "forest-cardamom": "#4A5D4E",
+                        "marigold-gold": "#D4AF37"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "ticket": "1.5rem"
+                    },
+                    spacing: {
+                        "widget-width-desktop": "420px",
+                        "gutter": "1rem",
+                        "margin-mobile": "1rem",
+                        "margin-desktop": "2rem",
+                        "widget-max-height": "680px"
+                    },
+                    fontFamily: {
+                        "reservation-code": ["monospace"],
+                        "body-text": ["Inter"],
+                        "display-h1": ["Outfit"],
+                        "section-h2": ["Outfit"],
+                        "widget-title": ["Outfit"],
+                        "muted-caption": ["Inter"]
+                    },
+                    fontSize: {
+                        "reservation-code": ["32px", { lineHeight: "1.0", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "body-text": ["16px", { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" }],
+                        "display-h1": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "section-h2": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "widget-title": ["20px", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "500" }],
+                        "muted-caption": ["14px", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "400" }]
+                    },
+                    backgroundImage: {
+                        'foil-pattern': 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.05) 10px, rgba(212, 175, 55, 0.05) 20px)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ticket-notch-left {
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background-color: var(--color-background, #131315);
+            border-radius: 50%;
+            border-right: 1px solid #D4AF37;
+            box-shadow: inset 4px 0 8px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .ticket-notch-right {
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background-color: var(--color-background, #131315);
+            border-radius: 50%;
+            border-left: 1px solid #D4AF37;
+            box-shadow: inset -4px 0 8px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        
+        .glow-marigold {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-text antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Atmospheric Image -->
+<div class="fixed inset-0 z-0 pointer-events-none opacity-20" data-alt="A luxurious modern Indian restaurant interior with dark obsidian slate walls, warm glowing saffron ambient lighting, and elegant brass accents. The space features plush velvet seating, sleek glass partitions, and subtle reflections. High-end, premium dining atmosphere with a focus on deep shadows and rich, warm highlights. Cinematic lighting, photorealistic, 8k resolution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBh829hy2RjGqvakvf7mT8MOc5t5ru0CDrY6e4BEkuMZy1MIU5hSPFyc3Mb0N1-i7nx8WemS6dfvTJtcFBCNT_TTRPX4a8ehcrF_fcnHJ0sM9g3KcaJJ-QlHMCb4oG3U-iMzgufeGwdxC5qO9BBYgK71h0Sw-eLx8aLo9LvmhuhgBNQljn-5QAKCHCppRqWdIrCqnKi30IVhIG43Nm0VZAXHKPnNDCkycBnmyjCJE6l6fgId8Y-CX6H1w')"></div>
+<div class="fixed inset-0 z-0 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-midnight-charcoal/75 backdrop-blur-lg border-b border-elevation-border shadow-[0_4px_20px_rgba(233,195,73,0.1)]">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-display-h1 text-section-h2 font-bold text-secondary-fixed tracking-tight">Shiv Sagar</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Menu</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Our Story</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary-fixed-dim transition-colors duration-300" href="#">Locations</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-gradient-to-r from-secondary to-amber-marigold text-on-primary-fixed font-semibold rounded-full shadow-[0_0_15px_rgba(233,195,73,0.4)] hover:shadow-[0_0_25px_rgba(233,195,73,0.6)] transition-all active:scale-95 text-sm uppercase tracking-wider">Book a Table</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-20 px-margin-mobile md:px-margin-desktop relative z-10">
+<!-- Ticket Container -->
+<div class="relative w-full max-w-md bg-obsidian-slate rounded-ticket border border-marigold-gold glow-marigold overflow-hidden shadow-2xl flex flex-col mx-auto">
+<!-- Notches -->
+<div class="ticket-notch-left"></div>
+<div class="ticket-notch-right"></div>
+<!-- Foil Pattern Overlay -->
+<div class="absolute inset-0 bg-foil-pattern opacity-30 pointer-events-none mix-blend-screen"></div>
+<!-- Ticket Body (Top Half) -->
+<div class="p-8 pb-12 relative z-10 flex flex-col items-center text-center">
+<!-- Brand Header -->
+<h3 class="font-widget-title text-[14px] uppercase tracking-[0.15em] text-marigold-gold mb-6 font-semibold">
+                    Shiv Sagar Reservation Hold
+                </h3>
+<!-- Code Block -->
+<div class="w-full bg-surface-container-lowest border border-elevation-border rounded-lg py-4 px-6 mb-8 flex justify-center items-center shadow-inner">
+<span class="font-reservation-code text-reservation-code text-marigold-gold drop-shadow-md">
+                        TABLE-B99
+                    </span>
+</div>
+<!-- Details -->
+<div class="flex flex-col items-center gap-4 w-full">
+<span class="bg-forest-cardamom text-tertiary-fixed px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-sm">
+                        Special Occasion / Anniversary
+                    </span>
+<div class="flex flex-col items-center gap-1 mt-2">
+<span class="font-widget-title text-widget-title text-white font-semibold">
+                            Friday, August 14, 2026 at 7:30 PM
+                        </span>
+<span class="font-body-text text-[12px] text-on-surface-variant/80">
+                            Indian Standard Time (IST)
+                        </span>
+</div>
+</div>
+</div>
+<!-- Dashed Divider Line -->
+<div class="w-full h-px border-t border-dashed border-marigold-gold/50 relative z-10"></div>
+<!-- Ticket Footer (Bottom Half) -->
+<div class="bg-chilli-red/10 p-6 relative z-10 flex flex-col items-center text-center border-t border-chilli-red/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-chilli-red mb-2" style="font-variation-settings: 'FILL' 1;">
+                    timer
+                </span>
+<p class="font-body-text text-[13px] text-chilli-red leading-relaxed max-w-xs">
+<span class="font-semibold block mb-1">Please note:</span>
+                    We will hold your table for a maximum of 15 minutes past your reservation time (until 7:45 PM IST). No PII was collected during this booking.
+                </p>
+</div>
+<!-- Subtle edge highlight -->
+<div class="absolute inset-0 rounded-ticket border-2 border-white/5 pointer-events-none z-20 mix-blend-overlay"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-elevation-border relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-h1 text-widget-title text-secondary">Shiv Sagar</span>
+<span class="font-body-text text-muted-caption text-on-surface-variant ml-4">© 2024 Shiv Sagar. Crafted with heritage.</span>
+</div>
+<nav class="flex flex-wrap gap-4 justify-center md:justify-end">
+<a class="font-body-text text-muted-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-text text-muted-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-text text-muted-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Accessibility</a>
+<a class="font-body-text text-muted-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+</nav>
+</div>
+</footer>
+</body></html>

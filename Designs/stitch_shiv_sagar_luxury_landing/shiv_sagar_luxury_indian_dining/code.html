@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shiv Sagar Luxury Restaurant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "outline-variant": "#564337",
+                            "on-secondary-fixed": "#241a00",
+                            "tertiary-container": "#879b8a",
+                            "on-primary-fixed": "#301400",
+                            "error-container": "#93000a",
+                            "on-secondary": "#3c2f00",
+                            "surface-bright": "#39393b",
+                            "on-primary": "#502400",
+                            "on-secondary-container": "#342800",
+                            "on-tertiary": "#233427",
+                            "surface-container-low": "#1b1b1d",
+                            "tertiary": "#b7ccb9",
+                            "background": "#131315",
+                            "primary-fixed-dim": "#ffb785",
+                            "on-error-container": "#ffdad6",
+                            "surface": "#131315",
+                            "on-surface-variant": "#dcc1b1",
+                            "surface-container-high": "#2a2a2c",
+                            "tertiary-fixed": "#d3e8d5",
+                            "on-tertiary-fixed-variant": "#394b3d",
+                            "on-surface": "#e5e1e4",
+                            "on-secondary-fixed-variant": "#574500",
+                            "error": "#ffb4ab",
+                            "on-background": "#e5e1e4",
+                            "on-error": "#690005",
+                            "outline": "#a48c7d",
+                            "surface-dim": "#131315",
+                            "on-primary-container": "#4d2300",
+                            "secondary-container": "#af8d11",
+                            "surface-container-highest": "#353437",
+                            "mint-emerald": "#10B981",
+                            "primary-fixed": "#ffdcc6",
+                            "on-tertiary-container": "#213225",
+                            "surface-variant": "#353437",
+                            "surface-container-lowest": "#0e0e10",
+                            "primary": "#ffb785",
+                            "surface-container": "#201f21",
+                            "chilli-red": "#EF4444",
+                            "surface-tint": "#ffb785",
+                            "elevation-border": "#2D2D35",
+                            "inverse-surface": "#e5e1e4",
+                            "obsidian-slate": "#121214",
+                            "inverse-primary": "#954a00",
+                            "primary-container": "#e37a20",
+                            "tertiary-fixed-dim": "#b7ccb9",
+                            "secondary-fixed": "#ffe088",
+                            "on-tertiary-fixed": "#0e1f13",
+                            "on-primary-fixed-variant": "#713700",
+                            "secondary": "#e9c349",
+                            "amber-marigold": "#F59E0B",
+                            "inverse-on-surface": "#303032",
+                            "secondary-fixed-dim": "#e9c349",
+                            "midnight-charcoal": "#1A1A1E"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "margin-mobile": "1rem",
+                            "widget-max-height": "680px",
+                            "widget-width-desktop": "420px",
+                            "margin-desktop": "2rem",
+                            "gutter": "1rem"
+                    },
+                    "fontFamily": {
+                            "display-h1": [
+                                    "Outfit"
+                            ],
+                            "reservation-code": [
+                                    "monospace"
+                            ],
+                            "body-text": [
+                                    "Inter"
+                            ],
+                            "widget-title": [
+                                    "Outfit"
+                            ],
+                            "section-h2": [
+                                    "Outfit"
+                            ],
+                            "muted-caption": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "display-h1": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "1.2",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "reservation-code": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "1.0",
+                                            "letterSpacing": "0.1em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-text": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "1.5",
+                                            "letterSpacing": "0",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "widget-title": [
+                                    "20px",
+                                    {
+                                            "lineHeight": "1.4",
+                                            "letterSpacing": "0",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "section-h2": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "1.3",
+                                            "letterSpacing": "-0.01em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "muted-caption": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "1.4",
+                                            "letterSpacing": "0",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+        }
+    </script>
+<style>
+        .glow-saffron {
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
+        }
+        @keyframes pulse-saffron {
+            0% { box-shadow: 0 0 0 0 rgba(227, 122, 32, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(227, 122, 32, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(227, 122, 32, 0); }
+        }
+        .animate-pulse-saffron {
+            animation: pulse-saffron 2s infinite;
+        }
+        .light-leak-left {
+            background: radial-gradient(circle at -20% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+        }
+        .light-leak-right {
+            background: radial-gradient(circle at 120% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-obsidian-slate text-on-background min-h-screen font-body-text flex flex-col relative overflow-x-hidden">
+<!-- Cinematic Light Leaks -->
+<div class="fixed inset-0 pointer-events-none light-leak-left z-0"></div>
+<div class="fixed inset-0 pointer-events-none light-leak-right z-0"></div>
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-lg text-secondary font-display-h1 text-display-h1-mobile md:text-display-h1 font-body-text text-body-text fixed top-0 w-full z-50 border-b border-elevation-border shadow-md">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Shiv Sagar Luxury Restaurant Logo" class="h-12 w-auto object-contain mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeJmgjXSK6SMUdNi30O1sRbcHw3RgXizl-agHy_PtNJzRjn8WptTJ783LJ7JIlI2lt3tHCdw6h-amTRRLp0Tbb7hm0ikNkLp8qbmgZ8S4qGp9HJmeSKLF-uI4rbkcfMzJ-XXu31Td8Ke8xn4bA3-MTH5IaY3SHiHk2OaruWuSgziIdhBfwwCKwD0UKgs_cC2WZ60N0ILaLAmdy5XQjvSI6BPb3bgfMlPQJ-vuHN9TKDuKZyfN8LYKPSg"/>
+<span class="font-display-h1 text-widget-title text-secondary tracking-widest hidden sm:block">SHIV SAGAR</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95 transition-all" href="#">Menu</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95 transition-all" href="#">Our Story</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95 transition-all" href="#">Locations</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-medium hover:bg-primary-container transition-colors duration-300 shadow-md">
+                    Book Now
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 relative z-10 flex items-center">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Left Column: Typography -->
+<div class="space-y-6">
+<h1 class="font-display-h1 text-display-h1 text-white leading-tight">
+                        Authentic Flavors,<br/>Reimagined.
+                    </h1>
+<p class="font-body-text text-body-text text-secondary-container max-w-lg">
+                        Experience culinary heritage paired with frictionless voice reservations. A modern approach to timeless vegetarian dining.
+                    </p>
+<div class="pt-4 flex items-center gap-4">
+<button class="bg-surface-container-high border border-elevation-border text-on-surface px-8 py-3 rounded-full font-medium hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span>Explore Menu</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Hero Image Card -->
+<div class="relative">
+<div class="absolute inset-0 bg-amber-marigold/10 rounded-2xl blur-3xl transform scale-95 z-0"></div>
+<div class="relative z-10 bg-surface/40 backdrop-blur-xl border border-white/10 rounded-2xl p-2 glow-saffron shadow-2xl transform transition-transform hover:scale-[1.02] duration-500">
+<img alt="High-fidelity spread of authentic Indian vegetarian dishes including naan, curries, and paneer tikka, beautifully plated on rustic wooden table" class="w-full h-[500px] object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB-dXOsCAd8pJ50XhTqG8yZAnqVRJpurpBYUwW52K8W866E4hfLjtpjAtqSWZ2ykO3bHcVyblz3mFkFKf-V9-fNIZ3holWwPv7RMnJtI4-v-A7rsvAjjP5-Vt-wXrRl_DcnHCnOjy9gaSz7KntIbs-1RUIT7TQB1DGg_IE9_VqaM69XIDwb4e1mrtur3zDNyl04o-3kCZhKa6DgqdTkdcOiROq2lESDfOjr0cDe89H35wCcrpKerm_1Q"/>
+<div class="absolute bottom-6 left-6 right-6 bg-obsidian-slate/80 backdrop-blur-md border border-elevation-border rounded-lg p-4 flex justify-between items-center">
+<div>
+<p class="text-secondary font-medium font-widget-title text-widget-title">Chef's Signature Thali</p>
+<p class="text-on-surface-variant text-sm font-body-text">A curated journey of spices.</p>
+</div>
+<div class="bg-surface-container px-3 py-1 rounded-full border border-elevation-border flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Voice Launcher FAB -->
+<button class="fixed bottom-[32px] right-[32px] w-[56px] h-[56px] rounded-full bg-gradient-to-tr from-primary-container to-amber-marigold shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center justify-center z-50 animate-pulse-saffron hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-primary font-body-text text-muted-caption w-full py-12 border-t border-obsidian-slate relative z-10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter max-w-7xl mx-auto">
+<div class="font-display-h1 text-section-h2 text-secondary tracking-wider text-center md:text-left mb-4 md:mb-0">
+                SHIV SAGAR
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">Contact Us</a>
+</div>
+<div class="text-on-surface-variant mt-4 md:mt-0 text-center md:text-right">
+                © 2024 SHIV SAGAR. AUTHENTIC VEGETARIAN HERITAGE.
+            </div>
+</div>
+</footer>
+</body></html>
