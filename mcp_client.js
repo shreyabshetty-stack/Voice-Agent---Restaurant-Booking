@@ -5,6 +5,7 @@ const { Client } = require("@modelcontextprotocol/sdk/client/index.js");
 const { StdioClientTransport } = require("@modelcontextprotocol/sdk/client/stdio.js");
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 
 // Local in-memory mock database as fallback
 const mockReservations = [];
@@ -19,6 +20,19 @@ let isMcpActive = false;
 
 // Initialize MCP Connections
 async function initMcp() {
+  // If credentials are provided via JSON string (e.g. on Vercel or cloud environments)
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON && (!process.env.GOOGLE_APPLICATION_CREDENTIALS || !fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS))) {
+    try {
+      const tmpPath = path.join(os.tmpdir(), 'service_account.json');
+      fs.writeFileSync(tmpPath, typeof process.env.GOOGLE_SERVICE_ACCOUNT_JSON === 'string'
+        ? process.env.GOOGLE_SERVICE_ACCOUNT_JSON
+        : JSON.stringify(process.env.GOOGLE_SERVICE_ACCOUNT_JSON));
+      process.env.GOOGLE_APPLICATION_CREDENTIALS = tmpPath;
+    } catch (e) {
+      console.warn("Could not write temporary service_account.json:", e.message);
+    }
+  }
+
   const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
   const spreadsheetId = process.env.GOOGLE_SPREADSHEET_ID;
 
@@ -273,8 +287,13 @@ async function getMcpAlternatives(targetDate) {
   return alternatives;
 }
 
+function isReady() {
+  return isMcpActive;
+}
+
 module.exports = {
   initMcp,
+  isReady,
   checkAvailability,
   bookReservation,
   cancelReservation

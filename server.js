@@ -302,6 +302,10 @@ app.post('/api/voice-turn', upload.single('audio'), async (req, res) => {
   let userText = '';
   
   try {
+    // Ensure MCP client is initialized (useful for cold starts on serverless platforms)
+    if (!mcpClient.isReady()) {
+      await mcpClient.initMcp();
+    }
     // 1. Transcribe audio if uploaded, otherwise fallback to text parameter
     if (req.file) {
       userText = await transcribeAudio(req.file.buffer);
@@ -593,9 +597,14 @@ wss.on('connection', (ws) => {
   });
 });
 
-// Start Server
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, async () => {
-  console.log(`Server is running in workspace on port ${PORT}`);
-  await mcpClient.initMcp();
-});
+// Export app for serverless platforms (e.g. Vercel)
+module.exports = app;
+
+// Start Server locally or in persistent environments
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3000;
+  server.listen(PORT, async () => {
+    console.log(`Server is running in workspace on port ${PORT}`);
+    await mcpClient.initMcp();
+  });
+}
