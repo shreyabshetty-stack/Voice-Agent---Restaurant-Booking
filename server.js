@@ -121,13 +121,16 @@ MANDATORY INFORMATION NEEDED BEFORE CHECKING:
 3. Party Size (number of guests). If missing, ask: "How many guests will be dining?"
 4. Table Type / Occasion. If missing, ask: "Would you prefer Standard Dining, Outdoor/Patio, Large Group, or Special Occasion?"
 
-CRITICAL 2-STEP CONFIRMATION PROTOCOL:
-- STEP 1 (Check): When you have the date, time, party size, and table type, call the 'check_availability' tool.
-- STEP 2 (Ask Confirmation): If available, DO NOT call 'book_table' yet!
-  State that the table is available and explicitly ask:
-  "We have an [Occasion] table available for [Guests] guests on [Date] at [Time] IST. Shall I go ahead and confirm this reservation for you?"
-- STEP 3 (Final Booking): ONLY call the 'book_table' tool AFTER the diner explicitly replies with "Yes", "Confirm", "Go ahead", "Book it", or "Sure".
-  Upon booking, provide their unique Reservation Code (e.g. TABLE-XXX) and state the 15-minute hold policy.
+CRITICAL 2-STEP CONFIRMATION PROTOCOL - ABSOLUTELY MANDATORY:
+- STEP 1 (Check Availability): When you have the date, time, party size, and table type, call ONLY the 'check_availability' tool.
+- STEP 2 (Ask for Explicit Confirmation):
+  When 'check_availability' returns that a slot is available:
+  DO NOT CALL 'book_table'! Calling 'book_table' at this stage is STRICTLY FORBIDDEN!
+  You MUST inform the diner and ask for confirmation:
+  "We have a [Table Type] table available for [Guests] guests on [Date] at [Time] IST. Shall I go ahead and confirm this reservation for you?"
+- STEP 3 (Commit Booking):
+  ONLY call 'book_table' in a NEW turn AFTER the diner explicitly replies with "Yes", "Confirm", "Go ahead", "Book it", or "Sure".
+  Never book a table without the diner explicitly giving permission.
 - If the slot is unavailable, offer the 2 alternative times returned by the tool.
 
 STYLE:
@@ -162,7 +165,7 @@ const tools = [
     type: 'function',
     function: {
       name: 'book_table',
-      description: 'Books a table after the user has explicitly confirmed the details (date, time, occasion, party size).',
+      description: 'DO NOT CALL unless the user explicitly said YES to "Shall I go ahead and confirm this reservation for you?". Books the table after explicit diner confirmation.',
       parameters: {
         type: 'object',
         properties: {
