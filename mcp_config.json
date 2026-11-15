@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "google-sheets": {
+      "command": "node",
+      "args": ["./mcp_servers/google_sheets_server.js"],
+      "env": {
+        "SPREADSHEET_ID": "your_spreadsheet_id_here"
+      }
+    },
+    "google-calendar": {
+      "command": "node",
+      "args": ["./mcp_servers/google_calendar_server.js"],
+      "env": {
+        "CALENDAR_ID": "primary"
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiv Sagar - Authentic Vegetarian Dining & Table Booking</title>
+  <!-- Outfit & Inter Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="ambient-glow marigold"></div>
+  <div class="ambient-glow saffron"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header>
+    <div class="header-container">
+      <h1 class="logo">SHIV SAGAR</h1>
+      <nav>
+        <a href="#about">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#locations">Locations</a>
+        <a href="https://shivsagar.in" target="_blank" class="nav-external">shivsagar.in ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero-section">
+    <div class="hero-content">
+      <span class="hero-badge">Established 1982</span>
+      <h2>Authentic Indian Vegetarian Flavors, Reimagined.</h2>
+      <p>Experience culinary heritage paired with our new contactless voice reservation assistant. Quick, secure, and hassle-free.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+        <button id="hero-book-btn" class="btn btn-primary">Book a Table Now</button>
+      </div>
+    </div>
+    
+    <div class="hero-card-wrapper">
+      <div class="glass-card food-preview-card">
+        <div class="food-image-placeholder">
+          <!-- Stylized geometric representation of luxury food plate -->
+          <div class="plate-ring"></div>
+          <div class="leaf-deco"></div>
+        </div>
+        <div class="card-details">
+          <h3>Saffron Paneer Special</h3>
+          <p>Paneer cubes cooked in a cream sauce flavored with organic Kashmiri saffron and cardamoms.</p>
+          <span class="price">₹ 420</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About / Menu Sections (Mock layouts) -->
+  <section id="menu" class="section">
+    <h3 class="section-title">Chef's Signature Selections</h3>
+    <div class="grid-menu">
+      <div class="glass-card menu-item">
+        <h4>Special Veg Biryani</h4>
+        <p>Aromatic basmati rice layered with garden vegetables, saffron and spices, cooked in handi.</p>
+        <span class="price">₹ 350</span>
+      </div>
+      <div class="glass-card menu-item">
+        <h4>Tandoori Platter</h4>
+        <p>Assortment of baby potatoes, paneer, mushroom, and broccoli roasted in tandoor.</p>
+        <span class="price">₹ 490</span>
+      </div>
+      <div class="glass-card menu-item">
+        <h4>Sagar Special Pav Bhaji</h4>
+        <p>Spiced mashed vegetable curry served with toasted buttery soft bread rolls.</p>
+        <span class="price">₹ 220</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Action Button (FAB) Launcher -->
+  <button id="voice-widget-launcher" class="fab-launcher" title="Book a Table via Voice Assistant">
+    <svg class="mic-bubble-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+      <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+    </svg>
+  </button>
+
+  <!-- Voice Agent Chat Widget Drawer -->
+  <div id="voice-widget-drawer" class="glass-card widget-drawer hidden">
+    <!-- Header -->
+    <div class="drawer-header">
+      <div class="header-info">
+        <h4 class="drawer-title">Shiv Sagar Booking Agent</h4>
+        <div class="status-indicator">
+          <span class="status-dot online"></span>
+          <span class="status-text">Online</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="close-btn" title="Close panel">&times;</button>
+    </div>
+
+    <!-- Active Interface Area -->
+    <div class="drawer-body">
+      
+      <!-- Voice Reservation Chat Interface -->
+      <div id="phase-1-container" class="phase-container">
+        <div id="chat-messages" class="chat-messages">
+          <div class="message agent">
+            <div class="bubble">
+              Hello! Welcome to Shiv Sagar's automated booking assistant. How can I help you today? You can book a table, reschedule, or cancel a reservation.
+            </div>
+            <span class="timestamp">Just now</span>
+          </div>
+        </div>
+        
+        <!-- Voice Footer -->
+        <div class="voice-footer">
+          <button id="p1-mic-btn" class="mic-button idle" title="Tap and speak">
+            <svg class="icon-mic" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+            </svg>
+            <div class="mic-ripple"></div>
+          </button>
+          <span id="p1-state-label" class="state-label">Tap to speak (auto-sends on pause)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
